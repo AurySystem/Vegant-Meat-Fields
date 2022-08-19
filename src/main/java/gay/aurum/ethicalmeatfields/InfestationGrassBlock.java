@@ -13,6 +13,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.UndergroundConfiguredFeatures;
 
 public class InfestationGrassBlock extends Block implements Fertilizable {
 	public static final int MAX_AGE = 4;
@@ -57,13 +59,9 @@ public class InfestationGrassBlock extends Block implements Fertilizable {
 				world.setBlockState(pos, this.getDefaultState().with(this.getAgeProperty(), age+1), 2);
 			}
 			if(age == MAX_AGE-1){
-				BlockState blockState = this.getDefaultState();
-
-				for(int i = 0; i < 2; ++i) {
+				for(int i = 0; i < 1; ++i) {
 					BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-					if (world.getBlockState(blockPos).isOf(Blocks.DIRT)||world.getBlockState(blockPos).isOf(Blocks.GRASS_BLOCK) && canSpread(blockState, world, blockPos)) { //actually just try to spawn a feature later
-						world.setBlockState(blockPos, blockState.with(this.getAgeProperty(), 0));
-					}
+					MeatFeatures.FLESH_PATCH.value().generate(world, world.getChunkManager().getChunkGenerator(), random, blockPos.up());
 				}
 			}
 		}
@@ -81,7 +79,7 @@ public class InfestationGrassBlock extends Block implements Fertilizable {
 
 	@Override
 	public void grow(ServerWorld world, RandomGenerator random, BlockPos pos, BlockState state) {
-		//use a feature to summon it in like moss
+		MeatFeatures.FLESH_PATCH.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
 	}
 
 	@Override

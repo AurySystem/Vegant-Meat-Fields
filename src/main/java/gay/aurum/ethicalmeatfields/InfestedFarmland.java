@@ -10,6 +10,7 @@ import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
@@ -41,8 +42,20 @@ public class InfestedFarmland extends FarmlandBlock {
 
 	}
 
+	@Override
+	public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+		if (!world.isClient
+				&& world.random.nextFloat() < fallDistance - 0.5F
+				&& entity instanceof LivingEntity
+				&& (entity instanceof PlayerEntity || world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING))
+				&& entity.getWidth() * entity.getWidth() * entity.getHeight() > 0.512F) {
+			setToDirt(state, world, pos);
+		}
+
+		entity.handleFallDamage(fallDistance, 0.8F, DamageSource.FALL);
+	}
 	public static void setToDirt(BlockState state, World world, BlockPos pos) {
-		world.setBlockState(pos, pushEntitiesUpBeforeBlockChange(state, EthicalMeatFields.INFESTATION_GRASS.getDefaultState(), world, pos));
+		world.setBlockState(pos, pushEntitiesUpBeforeBlockChange(state, MeatBlocks.INFESTATION_GRASS.getDefaultState(), world, pos));
 	}
 
 	private static boolean hasCrop(BlockView world, BlockPos pos) {

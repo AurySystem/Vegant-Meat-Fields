@@ -14,12 +14,13 @@ public class MeatCropBase extends CropBlock {
 		super(settings);
 	}
 
+	@Override
 	protected ItemConvertible getSeedsItem() {
-		return EthicalMeatFields.MEAT_SPORES;
+		return MeatBlocks.MEAT_SPORES;
 	}
 	@Override
 	protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-		return floor.isOf(Blocks.FARMLAND) || floor.isOf(EthicalMeatFields.TILLED_INFESTATON);
+		return floor.isOf(Blocks.FARMLAND) || floor.isOf(MeatBlocks.TILLED_INFESTATON);
 	}
 	@Override
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
@@ -30,7 +31,7 @@ public class MeatCropBase extends CropBlock {
 				if (random.nextInt((int)(25.0F / f) + 1) == 0) {
 					world.setBlockState(pos, this.withAge(i + 1), 2);
 					if(random.nextInt(12) < 1 && world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)){
-						world.setBlockState(pos.down(), EthicalMeatFields.TILLED_INFESTATON.getDefaultState(), 2);
+						world.setBlockState(pos.down(), MeatBlocks.TILLED_INFESTATON.getDefaultState(), 2);
 					}
 				}
 			}
@@ -45,11 +46,11 @@ public class MeatCropBase extends CropBlock {
 			for(int z = -1; z <= 1; ++z) {
 				float water = 0.0F;
 				BlockState blockState = world.getBlockState(blockPos.add(x, 0, z));
-				if (blockState.isOf(Blocks.FARMLAND) || blockState.isOf(EthicalMeatFields.TILLED_INFESTATON)) {
+				if (blockState.isOf(Blocks.FARMLAND) || blockState.isOf(MeatBlocks.TILLED_INFESTATON)) {
 					water = 1.0F;
 					if (blockState.get(FarmlandBlock.MOISTURE) > 0) {
 						water = 3.0F;
-						if(blockState.isOf(EthicalMeatFields.TILLED_INFESTATON)) water = 4.0F;
+						if(blockState.isOf(MeatBlocks.TILLED_INFESTATON)) water = 4.0F;
 					}
 				}
 
@@ -75,7 +76,7 @@ public class MeatCropBase extends CropBlock {
 	}
 	@Override
 	public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-		return (world.getBlockState(pos.down()).isOf(EthicalMeatFields.TILLED_INFESTATON) || world.getBlockState(pos.down()).isOf(EthicalMeatFields.INFESTATION_GRASS) || super.canPlaceAt(state, world, pos));
+		return (world.getBlockState(pos.down()).isOf(MeatBlocks.TILLED_INFESTATON) || world.getBlockState(pos.down()).isOf(MeatBlocks.INFESTATION_GRASS) || super.canPlaceAt(state, world, pos));
 	}
 
 }
