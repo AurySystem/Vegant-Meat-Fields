@@ -32,15 +32,15 @@ public class MeatFeatures {
 					new WeightedBlockStateProvider(
 							DataPool.<BlockState>builder()
 									.add(MeatBlocks.INFESTATION_CARPET.getDefaultState(), 25)
-									.add(MeatBlocks.MEAT_STALKS.getDefaultState(), 50)
+									.add(MeatBlocks.MEAT_STALKS.getDefaultState(), 30)
 									.add(MeatBlocks.BEEF_ROOT.getDefaultState(), 10)
 									.add(MeatBlocks.CHICKPEA.getDefaultState(), 4)
 									.add(MeatBlocks.CODGUS.getDefaultState(), 7)
 									.add(MeatBlocks.WARPED_CODGUS.getDefaultState(), 10)
 									.add(MeatBlocks.EYE_STALKS.getDefaultState(), 10)
 									.add(MeatBlocks.LAMB_BUSH.getDefaultState(), 10)
-									.add(MeatBlocks.VILE_STALKS.getDefaultState(), 23)
-									.add(MeatBlocks.ROT_PIT.getDefaultState(), 23)
+									.add(MeatBlocks.VILE_STALKS.getDefaultState(), 33)
+									.add(MeatBlocks.ROT_PIT.getDefaultState(), 33)
 					)
 			)
 	);
