@@ -11,14 +11,9 @@ import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.random.RandomGenerator;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldView;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.UndergroundConfiguredFeatures;
 
-public class InfestationGrassBlock extends Block implements Fertilizable {
+public class InfestationGrassBlock extends Block  {
 	public static final int MAX_AGE = 4;
 	public static final IntProperty AGE = Properties.AGE_4;
 
@@ -46,11 +41,6 @@ public class InfestationGrassBlock extends Block implements Fertilizable {
 		}
 	}
 
-	private static boolean canSpread(BlockState state, ServerWorld world, BlockPos pos) {
-		BlockPos blockPos = pos.up();
-		return !perish(state, world, pos) && !world.getFluidState(blockPos).isIn(FluidTags.WATER);
-	}
-
 	@Override
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
 		int age = state.get(this.getAgeProperty());
@@ -62,26 +52,13 @@ public class InfestationGrassBlock extends Block implements Fertilizable {
 			}
 			if(age == MAX_AGE-1){
 				BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-				if(!world.getBlockState(blockPos).getBlock().equals(state.getBlock()))
+				if(!world.getBlockState(blockPos).getBlock().equals(state.getBlock())){
 					MeatFeatures.FLESH_PATCH.value().generate(world, world.getChunkManager().getChunkGenerator(), random, blockPos.up());
+					world.setBlockState(pos, this.getDefaultState().with(this.getAgeProperty(), MAX_AGE), 2);
+				}
 
 			}
 		}
-	}
-
-	@Override
-	public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-		return false;
-	}
-
-	@Override
-	public boolean canGrow(World world, RandomGenerator random, BlockPos pos, BlockState state) {
-		return true;
-	}
-
-	@Override
-	public void grow(ServerWorld world, RandomGenerator random, BlockPos pos, BlockState state) {
-		MeatFeatures.FLESH_PATCH.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos.up());
 	}
 
 	@Override

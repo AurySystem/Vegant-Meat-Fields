@@ -1,0 +1,17 @@
+{
+  "item.ethicalmeatfields.meat_tendril": "Flesh Tendril",
+  "item.ethicalmeatfields.cooked_meat_tendril": "Cooked Flesh Tendril",
+  "item.ethicalmeatfields.meat_spores": "Flesh Spores",
+  "item.ethicalmeatfields.eye_spores": "Eye Spores",
+  "item.ethicalmeatfields.beefroot_spores": "Beefroot Seeds",
+  "item.ethicalmeatfields.lamb_bush_legs": "Lambbush Legs",
+  "item.ethicalmeatfields.cod_fungi_spores": "Codgus Spores",
+  "item.ethicalmeatfields.salmon_fungi_spores": "Warped Codgus Spores",
+  "item.ethicalmeatfields.chickpea": "Chickpeas",
+  "block.ethicalmeatfields.infestation_carpet": "Flesh Carpet",
+  "block.ethicalmeatfields.meat_soil": "Flesh Incursion",
+  "block.ethicalmeatfields.meat_farmland": "Infected Farmland",
+  "block.ethicalmeatfields.rot_pit": "Rot Tubes",
+  "block.ethicalmeatfields.vile_stalks": "Vile Stalks",
+  "block.ethicalmeatfields.rot_meat": "Rotten Incursion"
+}

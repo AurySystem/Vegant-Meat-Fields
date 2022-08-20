@@ -1,7 +1,6 @@
 package gay.aurum.ethicalmeatfields;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Holder;
 import net.minecraft.util.collection.DataPool;
@@ -10,7 +9,6 @@ import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.BuiltinBiomes;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.decorator.*;
@@ -22,7 +20,6 @@ import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import org.quiltmc.qsl.worldgen.biome.api.BiomeModifications;
 import org.quiltmc.qsl.worldgen.biome.api.BiomeSelectors;
 
-import java.util.List;
 
 import static gay.aurum.ethicalmeatfields.EthicalMeatFields.ID;
 
@@ -33,12 +30,12 @@ public class MeatFeatures {
 			new SimpleBlockFeatureConfig(
 					new WeightedBlockStateProvider(
 							DataPool.<BlockState>builder()
-									.add(MeatBlocks.INFESTATION_CARPET.getDefaultState(), 25)
+									.add(MeatBlocks.INFESTATION_CARPET.getDefaultState(), 40)
 									.add(MeatBlocks.MEAT_STALKS.getDefaultState(), 30)
 									.add(MeatBlocks.BEEF_ROOT.getDefaultState(), 10)
-									.add(MeatBlocks.CHICKPEA.getDefaultState(), 4)
-									.add(MeatBlocks.CODGUS.getDefaultState(), 7)
-									.add(MeatBlocks.WARPED_CODGUS.getDefaultState(), 10)
+									.add(MeatBlocks.CHICKPEA.getDefaultState(), 7)
+									.add(MeatBlocks.CODGUS.getDefaultState(), 10)
+									.add(MeatBlocks.WARPED_CODGUS.getDefaultState(), 7)
 									.add(MeatBlocks.EYE_STALKS.getDefaultState(), 10)
 									.add(MeatBlocks.LAMB_BUSH.getDefaultState(), 10)
 									.add(MeatBlocks.VILE_STALKS.getDefaultState(), 33)
@@ -58,8 +55,8 @@ public class MeatFeatures {
 					ConstantIntProvider.create(1),
 					0.0F,
 					2,
-					0.1F,
-					UniformIntProvider.create(1, 2),
+					0.2F,
+					UniformIntProvider.create(0, 2),
 					0.1F
 			)
 	);

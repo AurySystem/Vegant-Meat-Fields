@@ -1,5 +1,6 @@
-package gay.aurum.ethicalmeatfields;
+package gay.aurum.ethicalmeatfields.blocks;
 
+import gay.aurum.ethicalmeatfields.MeatBlocks;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.server.world.ServerWorld;

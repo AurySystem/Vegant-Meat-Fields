@@ -20,7 +20,7 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": "gay.aurum.ethicalmeatfields.EthicalMeatFields",
-			"client": "gay.aurum.ethicalmeatfields.EthicalMeatFieldsClient"
+			"client_init": "gay.aurum.ethicalmeatfields.EthicalMeatFieldsClient"
 		},
 		"depends": [
 			{

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "ethicalmeatfields:meat_tendril"
+  },
+  "result": "ethicalmeatfields:cooked_meat_tendril"
+}

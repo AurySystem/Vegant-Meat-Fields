@@ -10,20 +10,31 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:beef",
+              "name": "minecraft:spider_eye",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "ethicalmeatfields:beefroot",
+                  "block": "ethicalmeatfields:eye_stalks",
                   "properties": {
                     "age": "7"
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:binomial_with_bonus_count",
+                  "parameters": {
+                    "extra": 2,
+                    "probability": 0.2714286
                   }
                 }
               ]
             },
             {
               "type": "minecraft:item",
-              "name": "ethicalmeatfields:beefroot_spores"
+              "name": "ethicalmeatfields:eye_spores"
             }
           ]
         }
@@ -35,7 +46,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ethicalmeatfields:beefroot_spores",
+          "name": "ethicalmeatfields:eye_spores",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -52,7 +63,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "ethicalmeatfields:beefroot",
+          "block": "ethicalmeatfields:eye_stalks",
           "properties": {
             "age": "7"
           }

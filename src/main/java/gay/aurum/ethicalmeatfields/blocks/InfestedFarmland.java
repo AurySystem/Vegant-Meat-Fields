@@ -6,7 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.random.RandomGenerator;
@@ -24,7 +26,7 @@ public class InfestedFarmland extends FarmlandBlock {
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
 		int i = state.get(MOISTURE);
 		if (!isWaterNearby(world, pos) && !world.hasRain(pos.up())) {
-			if (i > 0) {
+			if (i > 0 && hasCrop(world, pos)) {
 				world.setBlockState(pos, state.with(MOISTURE, i - 1), 2);
 			}
 		} else if (i < 7) {
@@ -35,6 +37,8 @@ public class InfestedFarmland extends FarmlandBlock {
 				BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
 				if (world.getBlockState(blockPos).isOf(Blocks.FARMLAND)) {
 					world.setBlockState(blockPos, this.getDefaultState(), 2);
+				} else if(world.getBlockState(blockPos).isIn(BlockTags.DIRT)){
+					world.setBlockState(blockPos, MeatBlocks.INFESTATION_GRASS.getDefaultState(), 2);
 				}
 			}
 		}
@@ -57,6 +61,17 @@ public class InfestedFarmland extends FarmlandBlock {
 		world.setBlockState(pos, pushEntitiesUpBeforeBlockChange(state, MeatBlocks.INFESTATION_GRASS.getDefaultState(), world, pos));
 	}
 
+	@Override
+	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
+		if (!state.canPlaceAt(world, pos)) {
+			setToDirt(state, world, pos);
+		}
+
+	}
+	@Override
+	public BlockState getPlacementState(ItemPlacementContext ctx) {
+		return !this.getDefaultState().canPlaceAt(ctx.getWorld(), ctx.getBlockPos()) ? MeatBlocks.INFESTATION_GRASS.getDefaultState() : super.getPlacementState(ctx);
+	}
 	private static boolean hasCrop(BlockView world, BlockPos pos) {
 		Block block = world.getBlockState(pos.up()).getBlock();
 		return block instanceof CropBlock || block instanceof StemBlock || block instanceof AttachedStemBlock;
