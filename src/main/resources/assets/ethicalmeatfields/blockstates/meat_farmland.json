@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=1": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=2": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=3": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=4": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=5": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=6": {
+      "model": "ethicalmeatfields:block/meat_farmland"
+    },
+    "moisture=7": {
+      "model": "ethicalmeatfields:block/meat_farmland_moist"
+    }
+  }
+}

@@ -1,5 +1,7 @@
-package gay.aurum.ethicalmeatfields;
+package gay.aurum.ethicalmeatfields.blocks;
 
+import gay.aurum.ethicalmeatfields.MeatBlocks;
+import gay.aurum.ethicalmeatfields.MeatFeatures;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -53,16 +55,16 @@ public class InfestationGrassBlock extends Block implements Fertilizable {
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
 		int age = state.get(this.getAgeProperty());
 		if (perish(state, world, pos)) {
-			world.setBlockState(pos, Blocks.DIRT.getDefaultState());// turn into rotten infestation instead?
+			world.setBlockState(pos, MeatBlocks.ROT_MEAT.getDefaultState());// turn into rotten infestation instead?
 		} else if(age < MAX_AGE){
 			if (random.nextInt(12) < 1) {
 				world.setBlockState(pos, this.getDefaultState().with(this.getAgeProperty(), age+1), 2);
 			}
 			if(age == MAX_AGE-1){
-				for(int i = 0; i < 1; ++i) {
-					BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+				BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+				if(!world.getBlockState(blockPos).getBlock().equals(state.getBlock()))
 					MeatFeatures.FLESH_PATCH.value().generate(world, world.getChunkManager().getChunkGenerator(), random, blockPos.up());
-				}
+
 			}
 		}
 	}

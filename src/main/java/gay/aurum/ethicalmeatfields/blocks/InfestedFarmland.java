@@ -1,5 +1,6 @@
-package gay.aurum.ethicalmeatfields;
+package gay.aurum.ethicalmeatfields.blocks;
 
+import gay.aurum.ethicalmeatfields.MeatBlocks;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -25,8 +26,6 @@ public class InfestedFarmland extends FarmlandBlock {
 		if (!isWaterNearby(world, pos) && !world.hasRain(pos.up())) {
 			if (i > 0) {
 				world.setBlockState(pos, state.with(MOISTURE, i - 1), 2);
-			} else if (!hasCrop(world, pos)) {
-				setToDirt(state, world, pos);
 			}
 		} else if (i < 7) {
 			world.setBlockState(pos, state.with(MOISTURE, 7), 2);
@@ -34,7 +33,7 @@ public class InfestedFarmland extends FarmlandBlock {
 		if (random.nextInt(7) < 1) {
 			for (int r = 0; r < 2; ++r) {
 				BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-				if (world.getBlockState(blockPos).isOf(Blocks.FARMLAND)) { //actually just try to spawn a feature later
+				if (world.getBlockState(blockPos).isOf(Blocks.FARMLAND)) {
 					world.setBlockState(blockPos, this.getDefaultState(), 2);
 				}
 			}

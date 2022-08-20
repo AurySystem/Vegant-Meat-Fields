@@ -1,5 +1,7 @@
 package gay.aurum.ethicalmeatfields;
 
+import gay.aurum.ethicalmeatfields.blocks.InfestationGrassBlock;
+import gay.aurum.ethicalmeatfields.blocks.InfestedFarmland;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -52,7 +54,7 @@ public class MeatBlocks {
 			new AliasedBlockItem(WARPED_CODGUS, new QuiltItemSettings().group(ItemGroup.MISC)));
 	public static final Block CHICKPEA = Registry.register(Registry.BLOCK, ID("chickpea"),
 			new MeatCropBase(QuiltBlockSettings.copyOf(Blocks.WHEAT) ));
-	public static final Item CHICKPEAS = Registry.register(Registry.ITEM, ID("chickpeas"),
+	public static final Item CHICKPEAS = Registry.register(Registry.ITEM, ID("chickpea"),
 			new AliasedBlockItem(CHICKPEA, new QuiltItemSettings().group(ItemGroup.MISC)));
 
 	public static final Block INFESTATION_GRASS = Registry.register(Registry.BLOCK, ID("meat_soil"),
@@ -60,20 +62,29 @@ public class MeatBlocks {
 	public static final Item INFESTATION_GRASS_ITEM = Registry.register(Registry.ITEM, ID("meat_soil"),
 			new BlockItem(INFESTATION_GRASS, new QuiltItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 	public static final InfestedFarmland TILLED_INFESTATON = Registry.register(Registry.BLOCK, ID("meat_farmland"),
-			new InfestedFarmland(QuiltBlockSettings.copyOf(Blocks.GRASS_BLOCK) ));
+			new InfestedFarmland(QuiltBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
 	public static final Item TILLED_INFESTATON_ITEM = Registry.register(Registry.ITEM, ID("meat_farmland"),
 			new BlockItem(TILLED_INFESTATON, new QuiltItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
 	public static final Block INFESTATION_CARPET = Registry.register(Registry.BLOCK,ID("infestation_carpet"),
 			new CarpetBlock(AbstractBlock.Settings.of(Material.PLANT, MapColor.DARK_DULL_PINK).strength(0.1F).sounds(BlockSoundGroup.MOSS_CARPET)));
+	public static final Item INFESTATION_CARPET_ITEM = Registry.register(Registry.ITEM, ID("infestation_carpet"),
+			new BlockItem(INFESTATION_CARPET, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
 	public static final Block ROT_PIT = Registry.register(Registry.BLOCK, ID("rot_pit"),
 			new Block(QuiltBlockSettings.copyOf(Blocks.GRASS) ));
 	public static final Item ROT_PIT_ITEM = Registry.register(Registry.ITEM, ID("rot_pit"),
 			new BlockItem(ROT_PIT, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
 	public static final Block VILE_STALKS = Registry.register(Registry.BLOCK, ID("vile_stalks"),
 			new Block(QuiltBlockSettings.copyOf(Blocks.GRASS) ));
-	public static final Item VILE_STALKS_SPORES = Registry.register(Registry.ITEM, ID("vile_stalks_spores"),
-			new AliasedBlockItem(VILE_STALKS, new QuiltItemSettings().group(ItemGroup.MISC)));
+	public static final Item VILE_STALKS_ITEM = Registry.register(Registry.ITEM, ID("vile_stalks"),
+			new BlockItem(VILE_STALKS, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
+
+	public static final Block ROT_MEAT = Registry.register(Registry.BLOCK, ID("rot_meat"),
+			new Block(QuiltBlockSettings.copyOf(Blocks.DIRT) ));
+	public static final Item ROT_MEAT_ITEM = Registry.register(Registry.ITEM, ID("rot_meat"),
+			new BlockItem(ROT_MEAT, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
+
+	//add rabbit and pork
 
 	public static void init(){}
 }

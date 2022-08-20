@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "ethicalmeatfields:block/vile_stalks"
+  }
+}

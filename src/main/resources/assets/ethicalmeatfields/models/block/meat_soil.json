@@ -1,6 +1,8 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "ethicalmeatfields:block/dermsol"
+    "bottom": "ethicalmeatfields:block/epidermal",
+    "side": "ethicalmeatfields:block/epidermal",
+    "top": "ethicalmeatfields:block/dermsol"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "ethicalmeatfields:block/epidermal",
+    "top": "ethicalmeatfields:block/meatfarm_moist"
+  }
+}

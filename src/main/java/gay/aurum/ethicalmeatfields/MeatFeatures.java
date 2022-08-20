@@ -9,6 +9,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.biome.BuiltinBiomes;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.decorator.*;
@@ -55,17 +57,18 @@ public class MeatFeatures {
 					VerticalSurfaceType.FLOOR,
 					ConstantIntProvider.create(1),
 					0.0F,
-					5,
-					0.2F,
-					UniformIntProvider.create(1, 3),
-					0.3F
+					2,
+					0.1F,
+					UniformIntProvider.create(1, 2),
+					0.1F
 			)
 	);
 
 	public static final Holder<PlacedFeature> FLESH_INFESTATION = registerPlaced(
 			"flesh_infestation",
 			FLESH_PATCH,
-			CountPlacementModifier.create(12),
+			CountPlacementModifier.create(1),
+			RarityFilterPlacementModifier.create(40),
 			InSquarePlacementModifier.getInstance(),
 			PlacedFeatureUtil.WORLD_SURFACE_WG_HEIGHTMAP,
 			EnvironmentScanPlacementModifier.create(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
@@ -80,6 +83,6 @@ public class MeatFeatures {
 		return ConfiguredFeatureUtil.register(ID(id).toString(),  feature,  featureConfig);
 	}
 	public static void init(){
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.VEGETAL_DECORATION,FLESH_INFESTATION.getKey().orElseThrow());
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), GenerationStep.Feature.VEGETAL_DECORATION,FLESH_INFESTATION.getKey().orElseThrow());
 	}
 }
