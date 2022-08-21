@@ -34,7 +34,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "ethicalmeatfields:chickpeas"
+              "name": "ethicalmeatfields:chickpea"
             }
           ]
         }
@@ -46,7 +46,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ethicalmeatfields:chickpeas",
+          "name": "ethicalmeatfields:chickpea",
           "functions": [
             {
               "function": "minecraft:apply_bonus",

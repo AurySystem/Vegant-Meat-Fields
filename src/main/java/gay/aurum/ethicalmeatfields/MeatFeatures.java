@@ -68,7 +68,7 @@ public class MeatFeatures {
 			"flesh_infestation",
 			FLESH_PATCH,
 			CountPlacementModifier.create(1),
-			RarityFilterPlacementModifier.create(40),
+			RarityFilterPlacementModifier.create(60),
 			InSquarePlacementModifier.getInstance(),
 			PlacedFeatureUtil.WORLD_SURFACE_WG_HEIGHTMAP,
 			EnvironmentScanPlacementModifier.create(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
