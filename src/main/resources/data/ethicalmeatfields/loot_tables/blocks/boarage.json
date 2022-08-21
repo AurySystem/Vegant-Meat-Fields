@@ -10,11 +10,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:salmon",
+              "name": "minecraft:porkchop",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "ethicalmeatfields:salmon_fungi",
+                  "block": "ethicalmeatfields:boarage",
                   "properties": {
                     "age": "7"
                   }
@@ -34,7 +34,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "ethicalmeatfields:salmon_fungi_spores"
+              "name": "ethicalmeatfields:boarage_seeds"
             }
           ]
         }
@@ -46,7 +46,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ethicalmeatfields:salmon_fungi_spores",
+          "name": "ethicalmeatfields:boarage_seeds",
           "functions": [
             {
               "function": "minecraft:apply_bonus",
@@ -63,7 +63,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "ethicalmeatfields:salmon_fungi",
+          "block": "ethicalmeatfields:boarage",
           "properties": {
             "age": "7"
           }

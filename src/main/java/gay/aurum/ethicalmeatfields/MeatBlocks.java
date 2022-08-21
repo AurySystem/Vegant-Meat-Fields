@@ -56,7 +56,18 @@ public class MeatBlocks {
 			new ChickpeasBlock(QuiltBlockSettings.copyOf(Blocks.WHEAT).mapColor(MapColor.DULL_PINK).sounds(BlockSoundGroup.HONEY) ));
 	public static final Item CHICKPEAS = Registry.register(Registry.ITEM, ID("chickpea"),
 			new AliasedBlockItem(CHICKPEA, new QuiltItemSettings().group(ItemGroup.MISC)));
-
+	public static final Block BOARAGE = Registry.register(Registry.BLOCK, ID("boarage"),
+			new BoarageBlock(QuiltBlockSettings.copyOf(Blocks.WHEAT).mapColor(MapColor.DULL_PINK).sounds(BlockSoundGroup.HONEY) ));
+	public static final Item BOARAGE_SEEDS = Registry.register(Registry.ITEM, ID("boarage_seeds"),
+			new AliasedBlockItem(BOARAGE, new QuiltItemSettings().group(ItemGroup.MISC)));
+	public static final Block HOPS = Registry.register(Registry.BLOCK, ID("hops"),
+			new HopsBlock(QuiltBlockSettings.copyOf(Blocks.WHEAT).mapColor(MapColor.DULL_PINK).sounds(BlockSoundGroup.HONEY) ));
+	public static final Item HOPS_SEEDS = Registry.register(Registry.ITEM, ID("hops_seeds"),
+			new AliasedBlockItem(HOPS, new QuiltItemSettings().group(ItemGroup.MISC)));
+	public static final Block SKINHORN = Registry.register(Registry.BLOCK, ID("skinhorn"),
+			new SkinhornBlock(QuiltBlockSettings.copyOf(Blocks.WHEAT).mapColor(MapColor.DULL_PINK).sounds(BlockSoundGroup.HONEY) ));
+	public static final Item SKINHORN_SPORES = Registry.register(Registry.ITEM, ID("skinhorn_spores"),
+			new AliasedBlockItem(SKINHORN, new QuiltItemSettings().group(ItemGroup.MISC)));
 	public static final Block INFESTATION_GRASS = Registry.register(Registry.BLOCK, ID("meat_soil"),
 			new InfestationGrassBlock(QuiltBlockSettings.copyOf(Blocks.GRASS_BLOCK).mapColor(MapColor.DARK_DULL_PINK).sounds(BlockSoundGroup.HONEY) ));
 	public static final Item INFESTATION_GRASS_ITEM = Registry.register(Registry.ITEM, ID("meat_soil"),
