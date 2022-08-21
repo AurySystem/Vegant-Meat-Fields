@@ -7,10 +7,12 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.random.RandomGenerator;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
 
 public class InfestationGrassBlock extends Block  {
@@ -59,6 +61,16 @@ public class InfestationGrassBlock extends Block  {
 
 			}
 		}
+	}
+
+	@Override
+	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+		if(direction.getAxis() != Direction.UP.getAxis()){
+			if(state.get(this.getAgeProperty()) == MAX_AGE && neighborState.isIn(BlockTags.DIRT)){
+				return this.getDefaultState().with(this.getAgeProperty(), MAX_AGE-1);
+			}
+		}
+		return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
 	}
 
 	@Override

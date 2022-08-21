@@ -11,6 +11,6 @@ public class EthicalMeatFieldsClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		BlockRenderLayerMap.put(RenderLayer.getCutout(), VILE_STALKS, CHICKPEA, WARPED_CODGUS, CODGUS, LAMB_BUSH, BEEF_ROOT, EYE_STALKS, MEAT_STALKS);
+		BlockRenderLayerMap.put(RenderLayer.getCutout(), VILE_STALKS, CHICKPEA, WARPED_CODGUS, CODGUS, LAMB_BUSH, BEEF_ROOT, EYE_STALKS, MEAT_STALKS, BOARAGE, HOPS, SKINHORN);
 	}
 }
