@@ -3,12 +3,13 @@
   "minVersion": "0.8",
   "package": "gay.aurum.ethicalmeatfields.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "gay.aurum.ethicalmeatfields.mixin.LithiumCompat",
   "mixins": [
     "PathfindingMixin"
   ],
   "client": [
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
 	}
 }

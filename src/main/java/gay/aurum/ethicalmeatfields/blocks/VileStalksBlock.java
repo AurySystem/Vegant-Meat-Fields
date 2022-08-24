@@ -27,6 +27,6 @@ public class VileStalksBlock extends PlantBlock {
 
 	@Override
 	public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
-		return false;
+		return true;
 	}
 }
