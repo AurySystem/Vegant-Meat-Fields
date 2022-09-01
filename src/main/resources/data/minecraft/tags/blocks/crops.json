@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "ethicalmeatfields:meat_stalks",
+    "ethicalmeatfields:eye_stalks",
+    "ethicalmeatfields:beefroot",
+    "ethicalmeatfields:lamb_bush",
+    "ethicalmeatfields:cod_fungi",
+    "ethicalmeatfields:salmon_fungi",
+    "ethicalmeatfields:chickpea",
+    "ethicalmeatfields:boarage",
+    "ethicalmeatfields:skinhorn",
+    "ethicalmeatfields:hops"
+  ]
+}

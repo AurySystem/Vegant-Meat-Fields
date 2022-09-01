@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id":"#ethicalmeatfields:meat_vegetation",
+      "required": false
+    }
+  ]
+}

@@ -12,6 +12,17 @@
   "item.ethicalmeatfields.skinhorn_spores": "Skinhorn Spores",
   "item.ethicalmeatfields.hops_seeds": "Hops Seeds",
 
+  "block.ethicalmeatfields.meat_stalks": "Flesh Tendrils",
+  "block.ethicalmeatfields.eye_stalks": "Eye Stalk",
+  "block.ethicalmeatfields.beefroot": "Beefroots",
+  "block.ethicalmeatfields.lamb_bush": "Lambbush",
+  "block.ethicalmeatfields.cod_fungi": "Codgus",
+  "block.ethicalmeatfields.salmon_fungi": "Warped Codgus",
+  "block.ethicalmeatfields.chickpea": "Chickpeas",
+  "block.ethicalmeatfields.boarage": "Boarage",
+  "block.ethicalmeatfields.skinhorn": "Skinhorn",
+  "block.ethicalmeatfields.hops": "Hops",
+
   "block.ethicalmeatfields.infestation_carpet": "Flesh Carpet",
   "block.ethicalmeatfields.meat_soil": "Flesh Incursion",
   "block.ethicalmeatfields.meat_farmland": "Infected Farmland",
