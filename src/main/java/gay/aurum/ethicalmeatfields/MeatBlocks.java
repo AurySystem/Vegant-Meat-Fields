@@ -2,7 +2,9 @@ package gay.aurum.ethicalmeatfields;
 
 import gay.aurum.ethicalmeatfields.blocks.*;
 import gay.aurum.ethicalmeatfields.blocks.crops.*;
+import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
+import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -100,5 +102,8 @@ public class MeatBlocks {
 	//add leather?
 	//add rabbit and pork
 
-	public static void init(){}
+	public static void init(){
+		LandPathNodeTypesRegistry.register(VILE_STALKS, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
+		LandPathNodeTypesRegistry.register(ROT_PIT, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
+	}
 }
