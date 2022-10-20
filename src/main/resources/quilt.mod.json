@@ -6,9 +6,10 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Vegan't Meat Fields",
-			"description": "A short description of your mod.",
+			"description": "Cursed meat mod, adds ways to farm meat that don't involve animals.",
 			"contributors": {
-				"Your name here": "Aury"
+				"Aury": "author",
+				"Sisby folk": "contributor"
 			},
 			"contact": {
 				"homepage": "",
