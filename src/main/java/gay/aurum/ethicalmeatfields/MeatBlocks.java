@@ -103,6 +103,7 @@ public class MeatBlocks {
 	//add rabbit and pork
 
 	public static void init(){
-		LandPathNodeTypesRegistry.register(VILE_STALKS, PathNodeType.DAMAGE_OTHER, null);
+		LandPathNodeTypesRegistry.register(VILE_STALKS, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
+		LandPathNodeTypesRegistry.register(ROT_PIT, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
 	}
 }
